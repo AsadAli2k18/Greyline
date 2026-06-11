@@ -1,0 +1,233 @@
+.how-it-works {
+  padding: 100px 0;
+  background: var(--color-surface);
+}
+
+.how-it-works--process-only .process-section {
+  margin-top: 0;
+}
+
+.process-intro {
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--color-text-secondary);
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 40px;
+}
+
+.how-it-works-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.intro-text {
+  margin-bottom: 100px;
+}
+
+.intro-text .section-title {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: var(--color-brand);
+  text-align: center;
+  letter-spacing: -0.025em;
+}
+
+.intro-description {
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--color-text-secondary);
+  margin-bottom: 20px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.process-section {
+  margin-top: 80px;
+}
+
+.process-section .section-title {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 60px;
+  color: var(--color-brand);
+  letter-spacing: -0.025em;
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.process-step {
+  text-align: center;
+  padding: 40px 30px;
+  background: var(--color-muted-bg-soft);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-subtle);
+  box-shadow: var(--shadow-xs);
+  transition: box-shadow var(--transition-smooth), transform var(--transition-fast);
+}
+
+/* Scroll-in: each card uses its own intersection observer (see HowItWorks.js) */
+.process-step.process-step--reveal {
+  opacity: 0;
+  transform: translate3d(0, 1.75rem, 0) scale(0.985);
+  transition:
+    opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.68s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow var(--transition-smooth);
+}
+
+.process-step.process-step--reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+.process-step.process-step--reveal.is-visible:hover {
+  box-shadow: var(--shadow-md);
+  transform: translate3d(0, -3px, 0) scale(1);
+}
+
+.process-step.process-step--reveal:not(.is-visible):hover {
+  transform: translate3d(0, 1.75rem, 0) scale(0.985);
+  box-shadow: var(--shadow-xs);
+}
+
+.step-number {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(145deg, var(--color-brand) 0%, var(--color-brand-deep) 100%);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 auto 24px;
+  box-shadow: 0 4px 16px rgba(26, 35, 50, 0.25);
+}
+
+.process-step h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--color-brand);
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.process-step p {
+  font-size: 16px;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.cta-center {
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* Button styles are now in global buttons.css */
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .how-it-works {
+    padding: 90px 0;
+  }
+
+  .intro-text {
+    margin-bottom: 90px;
+  }
+
+  .intro-text .section-title,
+  .process-section .section-title {
+    font-size: 38px;
+    margin-bottom: 50px;
+  }
+
+  .intro-description {
+    font-size: 17px;
+  }
+
+  .process-steps {
+    gap: 35px;
+  }
+
+  .process-step {
+    padding: 35px 25px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .intro-text .section-title,
+  .process-section .section-title {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .how-it-works {
+    padding: 80px 0;
+  }
+
+  .intro-text {
+    margin-bottom: 80px;
+  }
+
+  .intro-text .section-title,
+  .process-section .section-title {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+
+  .intro-description {
+    font-size: 16px;
+  }
+
+  .process-steps {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .process-step {
+    padding: 30px 20px;
+  }
+
+  .btn-primary {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .process-step.process-step--reveal,
+  .process-step.process-step--reveal.is-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .process-step.process-step--reveal.is-visible:hover {
+    transform: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .how-it-works {
+    padding: 60px 0;
+  }
+
+  .intro-text {
+    margin-bottom: 60px;
+  }
+
+  .process-step {
+    padding: 24px;
+  }
+}

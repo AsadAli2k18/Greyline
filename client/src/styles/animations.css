@@ -1,0 +1,374 @@
+/* Scroll reveal: parent gets .reveal-group + .is-visible; children use .reveal-item */
+
+.reveal-group:not(.is-visible) .reveal-item {
+  opacity: 0;
+  transform: translate3d(0, 1.25rem, 0);
+  transition:
+    opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-group.is-visible .reveal-item {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition:
+    opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Stagger: direct grid children */
+.reveal-group.is-visible .services-grid > .reveal-item:nth-child(1) {
+  transition-delay: 0.02s;
+}
+.reveal-group.is-visible .services-grid > .reveal-item:nth-child(2) {
+  transition-delay: 0.1s;
+}
+.reveal-group.is-visible .services-grid > .reveal-item:nth-child(3) {
+  transition-delay: 0.18s;
+}
+
+.reveal-group.is-visible .problems-grid > .reveal-item:nth-child(1) {
+  transition-delay: 0.02s;
+}
+.reveal-group.is-visible .problems-grid > .reveal-item:nth-child(2) {
+  transition-delay: 0.08s;
+}
+.reveal-group.is-visible .problems-grid > .reveal-item:nth-child(3) {
+  transition-delay: 0.14s;
+}
+.reveal-group.is-visible .problems-grid > .reveal-item:nth-child(4) {
+  transition-delay: 0.2s;
+}
+
+.reveal-group.is-visible .features-grid > .reveal-item:nth-child(1) {
+  transition-delay: 0.02s;
+}
+.reveal-group.is-visible .features-grid > .reveal-item:nth-child(2) {
+  transition-delay: 0.08s;
+}
+.reveal-group.is-visible .features-grid > .reveal-item:nth-child(3) {
+  transition-delay: 0.14s;
+}
+.reveal-group.is-visible .features-grid > .reveal-item:nth-child(4) {
+  transition-delay: 0.2s;
+}
+
+.reveal-group.is-visible .process-steps > .reveal-item:nth-child(1) {
+  transition-delay: 0.02s;
+}
+.reveal-group.is-visible .process-steps > .reveal-item:nth-child(2) {
+  transition-delay: 0.1s;
+}
+.reveal-group.is-visible .process-steps > .reveal-item:nth-child(3) {
+  transition-delay: 0.18s;
+}
+.reveal-group.is-visible .process-steps > .reveal-item:nth-child(4) {
+  transition-delay: 0.26s;
+}
+.reveal-group.is-visible .process-steps > .reveal-item:nth-child(5) {
+  transition-delay: 0.34s;
+}
+
+.reveal-group.is-visible .testimonials-grid > .reveal-item:nth-child(1) {
+  transition-delay: 0.02s;
+}
+.reveal-group.is-visible .testimonials-grid > .reveal-item:nth-child(2) {
+  transition-delay: 0.08s;
+}
+.reveal-group.is-visible .testimonials-grid > .reveal-item:nth-child(3) {
+  transition-delay: 0.14s;
+}
+.reveal-group.is-visible .testimonials-grid > .reveal-item:nth-child(4) {
+  transition-delay: 0.2s;
+}
+.reveal-group.is-visible .testimonials-grid > .reveal-item:nth-child(5) {
+  transition-delay: 0.26s;
+}
+.reveal-group.is-visible .testimonials-grid > .reveal-item:nth-child(6) {
+  transition-delay: 0.32s;
+}
+
+.reveal-group.is-visible .blog-grid > .reveal-item:nth-child(1) {
+  transition-delay: 0.02s;
+}
+.reveal-group.is-visible .blog-grid > .reveal-item:nth-child(2) {
+  transition-delay: 0.1s;
+}
+.reveal-group.is-visible .blog-grid > .reveal-item:nth-child(3) {
+  transition-delay: 0.18s;
+}
+
+/* Section intros (title + copy + CTA) */
+.reveal-group.is-visible .reveal-intro > .reveal-item:nth-child(1) {
+  transition-delay: 0.02s;
+}
+.reveal-group.is-visible .reveal-intro > .reveal-item:nth-child(2) {
+  transition-delay: 0.1s;
+}
+.reveal-group.is-visible .reveal-intro > .reveal-item:nth-child(3) {
+  transition-delay: 0.16s;
+}
+.reveal-group.is-visible .reveal-intro > .reveal-item:nth-child(4) {
+  transition-delay: 0.22s;
+}
+
+.agencies-come-section.reveal-group.is-visible > .section-title.reveal-item,
+.what-working-section.reveal-group.is-visible > .section-title.reveal-item {
+  transition-delay: 0.02s;
+}
+
+.agencies-come-section.reveal-group.is-visible .problems-grid > .reveal-item:nth-child(1) {
+  transition-delay: 0.1s;
+}
+.agencies-come-section.reveal-group.is-visible .problems-grid > .reveal-item:nth-child(2) {
+  transition-delay: 0.16s;
+}
+.agencies-come-section.reveal-group.is-visible .problems-grid > .reveal-item:nth-child(3) {
+  transition-delay: 0.22s;
+}
+.agencies-come-section.reveal-group.is-visible .problems-grid > .reveal-item:nth-child(4) {
+  transition-delay: 0.28s;
+}
+
+.what-working-section.reveal-group.is-visible .features-grid > .reveal-item:nth-child(1) {
+  transition-delay: 0.1s;
+}
+.what-working-section.reveal-group.is-visible .features-grid > .reveal-item:nth-child(2) {
+  transition-delay: 0.16s;
+}
+.what-working-section.reveal-group.is-visible .features-grid > .reveal-item:nth-child(3) {
+  transition-delay: 0.22s;
+}
+.what-working-section.reveal-group.is-visible .features-grid > .reveal-item:nth-child(4) {
+  transition-delay: 0.28s;
+}
+
+.agencies-come-section.reveal-group.is-visible > .cta-center.reveal-item {
+  transition-delay: 0.34s;
+}
+
+.what-working-section.reveal-group.is-visible > .cta-center.reveal-item {
+  transition-delay: 0.34s;
+}
+
+.reveal-group.is-visible .blog-header > .reveal-item:nth-child(1) {
+  transition-delay: 0.02s;
+}
+.reveal-group.is-visible .blog-header > .reveal-item:nth-child(2) {
+  transition-delay: 0.1s;
+}
+
+.reveal-group.is-visible .faq-reveal-inner > .section-title.reveal-item {
+  transition-delay: 0.02s;
+}
+
+.reveal-group.is-visible .faq-list > .faq-item.reveal-item:nth-child(1) {
+  transition-delay: 0.08s;
+}
+.reveal-group.is-visible .faq-list > .faq-item.reveal-item:nth-child(2) {
+  transition-delay: 0.12s;
+}
+.reveal-group.is-visible .faq-list > .faq-item.reveal-item:nth-child(3) {
+  transition-delay: 0.16s;
+}
+.reveal-group.is-visible .faq-list > .faq-item.reveal-item:nth-child(4) {
+  transition-delay: 0.2s;
+}
+.reveal-group.is-visible .faq-list > .faq-item.reveal-item:nth-child(5) {
+  transition-delay: 0.24s;
+}
+.reveal-group.is-visible .faq-list > .faq-item.reveal-item:nth-child(6) {
+  transition-delay: 0.28s;
+}
+
+.reveal-group.is-visible .faq-reveal-inner > .cta-center.reveal-item {
+  transition-delay: 0.32s;
+}
+
+.reveal-group.is-visible .testimonials-header > .reveal-item:nth-child(1) {
+  transition-delay: 0.02s;
+}
+.reveal-group.is-visible .testimonials-header > .reveal-item:nth-child(2) {
+  transition-delay: 0.1s;
+}
+.reveal-group.is-visible .testimonials-header > .reveal-item:nth-child(3) {
+  transition-delay: 0.16s;
+}
+
+.reveal-group.is-visible .intro-text > .reveal-item:nth-child(1) {
+  transition-delay: 0.02s;
+}
+.reveal-group.is-visible .intro-text > .reveal-item:nth-child(2) {
+  transition-delay: 0.1s;
+}
+.reveal-group.is-visible .intro-text > .reveal-item:nth-child(3) {
+  transition-delay: 0.16s;
+}
+
+.process-section.reveal-group.is-visible > .section-title.reveal-item {
+  transition-delay: 0.02s;
+}
+
+.process-section.reveal-group.is-visible > .process-intro.reveal-item {
+  transition-delay: 0.06s;
+}
+
+.process-section.reveal-group.is-visible > .cta-center.reveal-item {
+  transition-delay: 0.42s;
+}
+
+.why-choose-content > .reveal-group.is-visible > .section-title.reveal-item {
+  transition-delay: 0.02s;
+}
+
+.why-choose-content > .reveal-group.is-visible > .cta-center.reveal-item {
+  transition-delay: 0.02s;
+}
+
+.blog-preview .reveal-group.is-visible > .cta-center.reveal-item {
+  transition-delay: 0.26s;
+}
+
+.reveal-group.is-visible .services-link-grid > .reveal-item:nth-child(1) {
+  transition-delay: 0.02s;
+}
+.reveal-group.is-visible .services-link-grid > .reveal-item:nth-child(2) {
+  transition-delay: 0.05s;
+}
+.reveal-group.is-visible .services-link-grid > .reveal-item:nth-child(3) {
+  transition-delay: 0.08s;
+}
+.reveal-group.is-visible .services-link-grid > .reveal-item:nth-child(4) {
+  transition-delay: 0.11s;
+}
+.reveal-group.is-visible .services-link-grid > .reveal-item:nth-child(5) {
+  transition-delay: 0.14s;
+}
+.reveal-group.is-visible .services-link-grid > .reveal-item:nth-child(6) {
+  transition-delay: 0.17s;
+}
+.reveal-group.is-visible .services-link-grid > .reveal-item:nth-child(7) {
+  transition-delay: 0.2s;
+}
+.reveal-group.is-visible .services-link-grid > .reveal-item:nth-child(8) {
+  transition-delay: 0.23s;
+}
+.reveal-group.is-visible .services-link-grid > .reveal-item:nth-child(9) {
+  transition-delay: 0.26s;
+}
+.reveal-group.is-visible .services-link-grid > .reveal-item:nth-child(10) {
+  transition-delay: 0.29s;
+}
+.reveal-group.is-visible .services-link-grid > .reveal-item:nth-child(11) {
+  transition-delay: 0.32s;
+}
+
+.reveal-group.is-visible .services-overview-inner > .cta-center.reveal-item {
+  transition-delay: 0.36s;
+}
+
+/* Home hero */
+.reveal-group.is-visible .hero-content .hero-title.reveal-item {
+  transition-delay: 0.02s;
+}
+.reveal-group.is-visible .hero-content .hero-subtitle.reveal-item {
+  transition-delay: 0.1s;
+}
+.reveal-group.is-visible .hero-content .hero-cta.reveal-item {
+  transition-delay: 0.18s;
+}
+
+/* Home problem / solution: copy and media use separate .reveal-group observers */
+.home-problem-copy.reveal-group.is-visible > .section-title.reveal-item {
+  transition-delay: 0.02s;
+}
+.home-problem-copy.reveal-group.is-visible > .home-problem-intro.reveal-item {
+  transition-delay: 0.08s;
+}
+.home-problem-copy.reveal-group.is-visible .home-problem-list > .reveal-item:nth-child(1) {
+  transition-delay: 0.12s;
+}
+.home-problem-copy.reveal-group.is-visible .home-problem-list > .reveal-item:nth-child(2) {
+  transition-delay: 0.16s;
+}
+.home-problem-copy.reveal-group.is-visible .home-problem-list > .reveal-item:nth-child(3) {
+  transition-delay: 0.2s;
+}
+.home-problem-copy.reveal-group.is-visible .home-problem-list > .reveal-item:nth-child(4) {
+  transition-delay: 0.24s;
+}
+.home-problem-media.reveal-group.is-visible > .reveal-item {
+  transition-delay: 0.06s;
+}
+
+.home-solution-copy.reveal-group.is-visible > .section-title.reveal-item {
+  transition-delay: 0.02s;
+}
+.home-solution-copy.reveal-group.is-visible > .home-solution-intro.reveal-item {
+  transition-delay: 0.08s;
+}
+.home-solution-copy.reveal-group.is-visible .home-solution-list > .reveal-item:nth-child(1) {
+  transition-delay: 0.12s;
+}
+.home-solution-copy.reveal-group.is-visible .home-solution-list > .reveal-item:nth-child(2) {
+  transition-delay: 0.16s;
+}
+.home-solution-copy.reveal-group.is-visible .home-solution-list > .reveal-item:nth-child(3) {
+  transition-delay: 0.2s;
+}
+.home-solution-copy.reveal-group.is-visible .home-solution-list > .reveal-item:nth-child(4) {
+  transition-delay: 0.24s;
+}
+.home-solution-copy.reveal-group.is-visible > .cta-center.reveal-item {
+  transition-delay: 0.28s;
+}
+.home-solution-media.reveal-group.is-visible > .reveal-item {
+  transition-delay: 0.06s;
+}
+
+.reveal-group.is-visible .home-final-cta-panel > .home-final-cta-eyebrow.reveal-item {
+  transition-delay: 0.02s;
+}
+.reveal-group.is-visible .home-final-cta-panel > .section-title.reveal-item {
+  transition-delay: 0.08s;
+}
+.reveal-group.is-visible .home-final-cta-panel > .home-final-cta-text.reveal-item {
+  transition-delay: 0.14s;
+}
+.reveal-group.is-visible .home-final-cta-panel > .home-final-cta-actions.reveal-item {
+  transition-delay: 0.2s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-group:not(.is-visible) .reveal-item,
+  .reveal-group.is-visible .reveal-item {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .service-card:hover,
+  .problem-card:hover,
+  .feature-item:hover,
+  .quality-card:hover,
+  .testimonial-card:hover,
+  .blog-card:hover {
+    transform: none;
+  }
+
+  .service-card:hover .service-icon,
+  .problem-card:hover .problem-icon,
+  .feature-item:hover .feature-icon,
+  .quality-card:hover .quality-icon {
+    transform: none;
+  }
+
+  .blog-card::before {
+    display: none;
+  }
+
+  .blog-card:hover .blog-category {
+    transform: none;
+    box-shadow: none;
+  }
+}

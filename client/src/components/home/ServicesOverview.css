@@ -1,0 +1,645 @@
+.services-overview {
+  padding: 100px 0;
+  background: var(--color-surface);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-bottom: 100px;
+}
+
+.service-card {
+  text-align: center;
+  padding: 40px 24px;
+  position: relative;
+  overflow: hidden;
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-subtle);
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform var(--transition-smooth),
+    box-shadow var(--transition-smooth),
+    border-color var(--transition-fast);
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-brand) 0%, var(--color-accent) 100%);
+  opacity: 0.85;
+  transform: scaleX(0.92);
+  transform-origin: center;
+  transition: transform var(--transition-smooth);
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-border);
+}
+
+.service-card:hover::before {
+  transform: scaleX(1);
+}
+
+.service-icon {
+  font-size: 64px;
+  margin-bottom: 20px;
+  display: block;
+  transition: transform var(--transition-smooth);
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.06) translateY(-2px);
+}
+
+.service-card h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--color-brand);
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+
+.service-card p {
+  font-size: 16px;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.agencies-come-section,
+.what-working-section {
+  margin-top: 100px;
+}
+
+.agencies-come-section .section-title,
+.what-working-section .section-title {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 60px;
+  color: var(--color-brand);
+  letter-spacing: -0.025em;
+}
+
+.problems-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.problem-card {
+  padding: 30px;
+  background: var(--color-muted-bg-soft);
+  border-radius: var(--radius-md);
+  text-align: center;
+  border: 1px solid var(--color-border-subtle);
+  cursor: pointer;
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth),
+    border-color var(--transition-fast);
+  position: relative;
+  box-shadow: var(--shadow-xs);
+  overflow: hidden;
+}
+
+.problem-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 0%, var(--color-accent-soft) 0%, transparent 55%);
+  opacity: 0;
+  transition: opacity var(--transition-smooth);
+  pointer-events: none;
+}
+
+.problem-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-accent-border);
+}
+
+.problem-card:hover::after {
+  opacity: 1;
+}
+
+.problem-card:hover .problem-icon {
+  transform: scale(1.08);
+}
+
+.problem-card.clicked {
+  animation: cardBlink 0.3s ease;
+}
+
+.problem-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+  display: block;
+  transition: transform var(--transition-smooth);
+}
+
+.problem-card h4 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 12px;
+}
+
+.problem-card p {
+  font-size: 15px;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.feature-item {
+  padding: 30px;
+  background: var(--color-muted-bg-soft);
+  border-radius: var(--radius-md);
+  text-align: center;
+  border: 1px solid var(--color-border-subtle);
+  cursor: pointer;
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth),
+    border-color var(--transition-fast);
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  box-shadow: var(--shadow-xs);
+  overflow: hidden;
+}
+
+.feature-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 0%, var(--color-accent-soft) 0%, transparent 55%);
+  opacity: 0;
+  transition: opacity var(--transition-smooth);
+  pointer-events: none;
+}
+
+.feature-item:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-accent-border);
+}
+
+.feature-item:hover::after {
+  opacity: 1;
+}
+
+.feature-item:hover .feature-icon {
+  transform: scale(1.08);
+}
+
+.feature-item.clicked {
+  animation: cardBlink 0.3s ease;
+}
+
+@keyframes cardBlink {
+  0% {
+    background: var(--color-muted-bg-soft);
+    transform: scale(1);
+  }
+  50% {
+    background: var(--color-accent-soft);
+    transform: scale(1.02);
+    box-shadow: 0 0 24px var(--color-accent-glow);
+  }
+  100% {
+    background: var(--color-muted-bg-soft);
+    transform: scale(1);
+  }
+}
+
+.feature-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+  display: block;
+  transition: transform var(--transition-smooth);
+}
+
+.feature-item h4 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 12px;
+}
+
+.feature-item p {
+  font-size: 15px;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.cta-center {
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* Button styles are now in global buttons.css */
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .services-overview {
+    padding: 90px 0;
+  }
+
+  .services-grid {
+    gap: 35px;
+    margin-bottom: 90px;
+  }
+
+  .agencies-come-section .section-title,
+  .what-working-section .section-title {
+    font-size: 38px;
+    margin-bottom: 50px;
+  }
+
+  .problems-grid,
+  .features-grid {
+    gap: 25px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .agencies-come-section .section-title,
+  .what-working-section .section-title {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-overview {
+    padding: 80px 0;
+  }
+
+  .services-grid {
+    margin-bottom: 80px;
+  }
+
+  .agencies-come-section,
+  .what-working-section {
+    margin-top: 80px;
+  }
+
+  .agencies-come-section .section-title,
+  .what-working-section .section-title {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+
+  .problems-grid,
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .btn-primary {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-overview {
+    padding: 60px 0;
+  }
+
+  .service-card {
+    padding: 30px 15px;
+  }
+
+  .problem-card,
+  .feature-item {
+    padding: 24px;
+  }
+}
+
+/* Homepage services — Apple-style horizontal carousel (links to /services/:slug) */
+.services-overview--compact {
+  background: var(--color-bg);
+}
+
+.services-overview-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.services-overview--compact .section-title {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--color-brand);
+  letter-spacing: -0.025em;
+}
+
+.services-overview-intro {
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--color-text-secondary);
+  max-width: 640px;
+  margin: 0 auto 40px;
+}
+
+/* Carousel strip (horizontal scroll + snap; avoids 100vw scrollbar bugs) */
+.services-carousel-bleed {
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.services-carousel-shell {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: clamp(6px, 1.5vw, 14px);
+}
+
+.services-carousel-nav {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-brand);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.services-carousel-nav:hover:not(:disabled) {
+  background: var(--color-muted-bg-soft);
+  color: var(--color-accent);
+  border-color: var(--color-accent-border);
+  box-shadow: var(--shadow-md);
+}
+
+.services-carousel-nav:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.services-carousel-nav:disabled {
+  opacity: 0.36;
+  cursor: not-allowed;
+  box-shadow: var(--shadow-xs);
+}
+
+.services-carousel {
+  --service-carousel-gap: clamp(16px, 2.5vw, 22px);
+  container-name: service-carousel;
+  container-type: inline-size;
+  flex: 1;
+  min-width: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: clamp(12px, 4vw, 40px);
+  scrollbar-width: thin;
+  scrollbar-color: rgba(26, 35, 50, 0.25) transparent;
+  padding-block: 12px 28px;
+}
+
+.services-carousel::-webkit-scrollbar {
+  height: 6px;
+}
+
+.services-carousel::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.services-carousel::-webkit-scrollbar-thumb {
+  background: rgba(26, 35, 50, 0.2);
+  border-radius: 999px;
+}
+
+.services-link-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: var(--service-carousel-gap, clamp(16px, 2.5vw, 22px));
+  width: max-content;
+  margin: 0 auto;
+  padding: 4px 0;
+}
+
+.service-link-card {
+  --service-card-radius: clamp(20px, 3vw, 28px);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 auto;
+  /* vw fallback; cqi used when container queries apply (sizes to carousel, not full viewport) */
+  width: min(92vw, 560px);
+  min-height: min(72vw, 420px);
+  aspect-ratio: 16 / 11;
+  max-height: 480px;
+  text-decoration: none;
+  color: inherit;
+  border-radius: var(--service-card-radius);
+  border: 1px solid var(--color-border-subtle);
+  box-shadow: var(--shadow-xs);
+  overflow: hidden;
+  scroll-snap-align: start;
+  transform: translateZ(0);
+  transition:
+    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.35s ease;
+}
+
+@container service-carousel (max-width: 559px) {
+  .service-link-card {
+    width: min(92cqi, 560px);
+    min-height: 0;
+    aspect-ratio: 4 / 5;
+    max-height: none;
+  }
+
+  .service-link-card p {
+    -webkit-line-clamp: 5;
+  }
+}
+
+/* Two full cards visible within the carousel viewport */
+@container service-carousel (min-width: 560px) {
+  .service-link-card {
+    width: calc((100cqi - var(--service-carousel-gap)) / 2);
+    max-width: 520px;
+  }
+}
+
+.service-link-card:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
+/* White card surface — matches .quality-card (Why Choose Us) */
+.service-link-card-media {
+  position: absolute;
+  inset: 0;
+  background: var(--color-surface);
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.001);
+  transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.service-link-card::after {
+  display: none;
+}
+
+.service-link-card-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex: 1;
+  min-height: 0;
+  padding: clamp(22px, 4vw, 32px) clamp(22px, 4vw, 32px) clamp(24px, 4.5vw, 36px);
+  color: var(--color-text);
+}
+
+.service-link-icon {
+  font-size: clamp(32px, 5vw, 40px);
+  display: block;
+  margin-bottom: 14px;
+  filter: none;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.service-link-card h3 {
+  font-size: clamp(20px, 2.4vw, 26px);
+  font-weight: 600;
+  color: var(--color-brand);
+  margin: 0 0 12px;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.service-link-card p {
+  flex: 1;
+  margin: 0 0 18px;
+  font-size: clamp(14px, 1.6vw, 16px);
+  line-height: 1.55;
+  color: var(--color-text-secondary);
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.service-link-more {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #fff;
+  background: var(--color-accent);
+  padding: 10px 20px;
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.45s ease,
+    background 0.35s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  /* Specificity above global .reveal-group.is-visible .reveal-item so hover motion applies */
+  .services-overview--compact .reveal-group.is-visible .services-link-grid .service-link-card.reveal-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-border);
+  }
+
+  .services-overview--compact .reveal-group.is-visible .services-link-grid .service-link-card.reveal-item:hover .service-link-card-media {
+    transform: scale(1.02);
+  }
+
+  .services-overview--compact .reveal-group.is-visible .services-link-grid .service-link-card.reveal-item:hover .service-link-icon {
+    transform: scale(1.05);
+  }
+
+  .services-overview--compact .reveal-group.is-visible .services-link-grid .service-link-card.reveal-item:hover .service-link-more {
+    background: var(--color-accent-hover);
+    box-shadow: var(--shadow-md);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-link-card,
+  .service-link-card-media,
+  .service-link-icon,
+  .service-link-more {
+    transition: none;
+  }
+
+  .services-overview--compact .reveal-group.is-visible .services-link-grid .service-link-card.reveal-item:hover {
+    transform: none;
+  }
+
+  .services-overview--compact .reveal-group.is-visible .services-link-grid .service-link-card.reveal-item:hover .service-link-card-media {
+    transform: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-overview--compact .section-title {
+    font-size: 32px;
+  }
+
+  .services-overview-intro {
+    font-size: 17px;
+    margin-bottom: 28px;
+  }
+
+  .services-carousel-shell {
+    gap: 6px;
+  }
+
+  .services-carousel-nav {
+    width: 40px;
+    height: 40px;
+  }
+
+  .services-carousel-nav svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .services-carousel {
+    scroll-padding-inline: 16px;
+  }
+}

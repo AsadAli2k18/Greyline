@@ -1,0 +1,165 @@
+/*
+ * Homepage-only motion: subtle 3D perspective on scroll-reveal (Apple-style depth).
+ * Scoped to .home-page — does not alter other routes or global reveal defaults.
+ * Gated behind prefers-reduced-motion: no-preference so global a11y resets stay intact.
+ */
+
+@media (prefers-reduced-motion: no-preference) {
+  .home-page .reveal-group {
+    perspective: 1200px;
+  }
+
+  /* —— Hero copy —— */
+  .home-page .reveal-group:not(.is-visible) .hero-content .reveal-item {
+    opacity: 0;
+    transform: perspective(900px) translate3d(0, 1.1rem, -8px) rotateX(5deg);
+    transition:
+      opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .home-page .reveal-group.is-visible .hero-content .reveal-item {
+    opacity: 1;
+    transform: perspective(900px) translate3d(0, 0, 0) rotateX(0deg);
+    transition:
+      opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* —— Problem / solution media panels (separate reveal-group per column) —— */
+  .home-page .home-problem-media.reveal-group:not(.is-visible) > .reveal-item {
+    opacity: 0;
+    transform: perspective(1000px) translate3d(0, 1.25rem, -18px) rotateY(-3deg) rotateX(3deg);
+    transition:
+      opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .home-page .home-solution-media.reveal-group:not(.is-visible) > .reveal-item {
+    opacity: 0;
+    transform: perspective(1000px) translate3d(0, 1.25rem, -18px) rotateY(3deg) rotateX(3deg);
+    transition:
+      opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .home-page .home-problem-media.reveal-group.is-visible > .reveal-item,
+  .home-page .home-solution-media.reveal-group.is-visible > .reveal-item {
+    opacity: 1;
+    transform: perspective(1000px) translate3d(0, 0, 0) rotateY(0deg) rotateX(0deg);
+    transition:
+      opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* —— List “chips” (card-like rows) —— */
+  .home-page .home-problem-copy.reveal-group:not(.is-visible) .home-problem-list > .reveal-item:nth-child(odd),
+  .home-page .home-solution-copy.reveal-group:not(.is-visible) .home-solution-list > .reveal-item:nth-child(odd) {
+    opacity: 0;
+    transform: perspective(800px) translate3d(0, 0.85rem, -6px) rotateX(4deg) rotateY(-1.5deg);
+    transition:
+      opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .home-page .home-problem-copy.reveal-group:not(.is-visible) .home-problem-list > .reveal-item:nth-child(even),
+  .home-page .home-solution-copy.reveal-group:not(.is-visible) .home-solution-list > .reveal-item:nth-child(even) {
+    opacity: 0;
+    transform: perspective(800px) translate3d(0, 0.85rem, -6px) rotateX(4deg) rotateY(1.5deg);
+    transition:
+      opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .home-page .home-problem-copy.reveal-group.is-visible .home-problem-list > .reveal-item,
+  .home-page .home-solution-copy.reveal-group.is-visible .home-solution-list > .reveal-item {
+    opacity: 1;
+    transform: perspective(800px) translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg);
+    transition:
+      opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* —— Why choose us (per-card scroll reveal; not tied to a parent .reveal-group) —— */
+  .home-page .qualities-grid .quality-card.quality-card--scroll:not(.is-visible):nth-child(odd) {
+    opacity: 0;
+    transform: perspective(1100px) translate3d(0, 1.25rem, -20px) rotateX(5.5deg) rotateY(-2deg);
+    transition:
+      opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .home-page .qualities-grid .quality-card.quality-card--scroll:not(.is-visible):nth-child(even) {
+    opacity: 0;
+    transform: perspective(1100px) translate3d(0, 1.25rem, -20px) rotateX(5.5deg) rotateY(2deg);
+    transition:
+      opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .home-page .qualities-grid .quality-card.quality-card--scroll.is-visible {
+    opacity: 1;
+    transform: perspective(1100px) translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg);
+    transition:
+      opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* —— Process steps (per-card scroll reveal; not tied to parent .reveal-group) —— */
+  .home-page .process-steps .process-step.process-step--reveal:not(.is-visible):nth-child(odd) {
+    opacity: 0;
+    transform: perspective(1100px) translate3d(0, 1.2rem, -18px) rotateX(5deg) rotateY(-2deg);
+    transition:
+      opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.78s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .home-page .process-steps .process-step.process-step--reveal:not(.is-visible):nth-child(even) {
+    opacity: 0;
+    transform: perspective(1100px) translate3d(0, 1.2rem, -18px) rotateX(5deg) rotateY(2deg);
+    transition:
+      opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.78s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .home-page .process-steps .process-step.process-step--reveal.is-visible {
+    opacity: 1;
+    transform: perspective(1100px) translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg);
+    transition:
+      opacity 0.72s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.88s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* —— Final CTA panel (transform only; copy still uses .reveal-item stagger) —— */
+  .home-page .reveal-group:not(.is-visible) .home-final-cta-panel {
+    transform: perspective(1000px) translate3d(0, 0.6rem, -14px) rotateX(4deg);
+    transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .home-page .reveal-group.is-visible .home-final-cta-panel {
+    transform: perspective(1000px) translate3d(0, 0, 0) rotateX(0deg);
+    transition: transform 0.88s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* —— Hover: gentle depth + tilt (fine pointers only) —— */
+  @media (hover: hover) and (pointer: fine) {
+    .home-page .qualities-grid .quality-card.quality-card--scroll.is-visible:hover {
+      transform: perspective(1100px) translate3d(0, -7px, 8px) rotateX(2.5deg) rotateY(-1deg);
+      transition:
+        transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow var(--transition-smooth),
+        border-color var(--transition-fast);
+    }
+
+    .home-page .qualities-grid .quality-card.quality-card--scroll.is-visible:nth-child(even):hover {
+      transform: perspective(1100px) translate3d(0, -7px, 8px) rotateX(2.5deg) rotateY(1deg);
+    }
+
+    .home-page .process-steps .process-step.process-step--reveal.is-visible:hover {
+      transform: perspective(1100px) translate3d(0, -5px, 5px) rotateX(1.5deg);
+      transition:
+        transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow var(--transition-smooth);
+    }
+  }
+}

@@ -1,0 +1,116 @@
+.services-hub-page {
+  width: 100%;
+  padding-top: 80px;
+}
+
+.services-hub-hero {
+  padding: 72px 0 48px;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 90% 55% at 88% 12%, rgba(224, 61, 61, 0.075) 0%, transparent 52%),
+    radial-gradient(ellipse 75% 50% at 12% 88%, rgba(45, 74, 111, 0.065) 0%, transparent 48%),
+    linear-gradient(178deg, var(--color-surface) 0%, var(--color-muted-bg-soft) 100%);
+  text-align: center;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.services-hub-hero .page-title {
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  color: var(--color-brand);
+  margin: 0 0 16px;
+  letter-spacing: -0.025em;
+}
+
+.services-hub-hero .page-lead {
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--color-text-secondary);
+  max-width: 640px;
+  margin: 0 auto 24px;
+}
+
+.services-hub-content {
+  padding: 64px 0 100px;
+  background: var(--color-bg);
+}
+
+.services-hub-group {
+  margin-bottom: 56px;
+}
+
+.services-hub-group:last-child {
+  margin-bottom: 0;
+}
+
+.services-hub-group-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-brand);
+  margin: 0 0 24px;
+  letter-spacing: -0.02em;
+}
+
+.services-hub-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.services-hub-card {
+  display: block;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: var(--shadow-xs);
+  transition:
+    transform var(--transition-smooth),
+    box-shadow var(--transition-smooth),
+    border-color var(--transition-fast);
+}
+
+.services-hub-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-accent-border);
+}
+
+.services-hub-card-icon {
+  font-size: 32px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.services-hub-card h3 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-brand);
+}
+
+.services-hub-card p {
+  margin: 0 0 12px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--color-text-secondary);
+}
+
+.services-hub-card-link {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+@media (max-width: 768px) {
+  .services-hub-hero {
+    padding: 56px 0 40px;
+  }
+
+  .services-hub-content {
+    padding: 48px 0 72px;
+  }
+}

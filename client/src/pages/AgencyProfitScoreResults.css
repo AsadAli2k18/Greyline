@@ -1,0 +1,263 @@
+.profit-score-page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, var(--color-bg-dark) 0%, #070a0f 100%);
+  color: white;
+  padding-top: 80px;
+}
+
+.scorecard-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.scorecard-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.scorecard-logo {
+  font-size: 32px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.scorecard-subtitle {
+  font-size: 14px;
+  color: #999;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.scorecard-content {
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  padding: 60px;
+  color: var(--color-text);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--color-border-subtle);
+}
+
+.main-score {
+  text-align: center;
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+  border-bottom: 2px solid var(--color-border-subtle);
+}
+
+.score-greeting {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 16px;
+}
+
+.score-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.score-percentage {
+  font-size: 72px;
+  font-weight: 700;
+  color: var(--color-brand);
+  line-height: 1;
+}
+
+.score-label {
+  font-size: 24px;
+  font-weight: 600;
+  color: #666;
+}
+
+.potential-impact {
+  text-align: center;
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+  border-bottom: 2px solid var(--color-border-subtle);
+}
+
+.impact-label {
+  font-size: 14px;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.impact-amount {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.category-breakdown {
+  margin-bottom: 40px;
+}
+
+.category-breakdown h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: var(--color-brand);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.category-item {
+  margin-bottom: 24px;
+}
+
+.category-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-brand);
+}
+
+.progress-bar {
+  width: 100%;
+  height: 12px;
+  background: var(--color-border-subtle);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 6px;
+  transition: width 0.3s ease;
+}
+
+.quick-wins {
+  margin-bottom: 40px;
+  padding-top: 40px;
+  border-top: 2px solid var(--color-border-subtle);
+}
+
+.quick-wins h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: var(--color-brand);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.quick-wins ul {
+  list-style: none;
+  padding: 0;
+}
+
+.quick-wins li {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  margin-bottom: 12px;
+  padding-left: 24px;
+  position: relative;
+}
+
+.quick-wins li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.cta-section {
+  text-align: center;
+  padding-top: 40px;
+  border-top: 2px solid var(--color-border-subtle);
+}
+
+/* Use global button styles, override color for this page */
+.profit-score-page .btn-primary {
+  background: linear-gradient(180deg, var(--color-accent) 0%, #c93434 100%);
+  color: white;
+}
+
+.profit-score-page .btn-primary:hover {
+  background: linear-gradient(180deg, var(--color-accent-hover) 0%, #b32d2d 100%);
+  box-shadow: 0 8px 24px var(--color-accent-glow);
+}
+
+.cta-note {
+  font-size: 14px;
+  color: #666;
+  margin-top: 16px;
+}
+
+.stats-section {
+  max-width: 1000px;
+  margin: 60px auto 0;
+  padding: 60px 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-subtle);
+  box-shadow: var(--shadow-md);
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--color-brand);
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  font-size: 16px;
+  color: var(--color-text-secondary);
+}
+
+@media (max-width: 1024px) {
+  .stats-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .profit-score-page {
+    padding-top: 100px;
+  }
+
+  .scorecard-content {
+    padding: 40px 30px;
+  }
+
+  .score-percentage {
+    font-size: 56px;
+  }
+
+  .impact-amount {
+    font-size: 36px;
+  }
+
+  .stats-section {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 40px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .scorecard-content {
+    padding: 30px 20px;
+  }
+
+  .score-percentage {
+    font-size: 48px;
+  }
+}
